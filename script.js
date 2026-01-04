@@ -40,6 +40,21 @@ function hideMenu() {
     }
     document.querySelector("body").style.overflow = "visible";
 }
+document.addEventListener('DOMContentLoaded', function() {
+    initMenuElements();
+    
+    const mobileMenu = document.querySelector('.mobile-menu');
+    if (mobileMenu) {
+        mobileMenu.addEventListener('click', function(e) {
+            if (e.target === mobileMenu) {
+                hideMenu();
+            }
+        });
+    }
+    
+    // Loading animation code...
+});
+
 
 // Navbar Scroll Effect
 window.addEventListener('scroll', () => {
@@ -211,17 +226,6 @@ document.querySelectorAll('.program-card, .company-card, .office-card, .download
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     initMenuElements();
-    
-    // Add backdrop click to close menu
-    const mobileMenu = document.querySelector('.mobile-menu');
-    if (mobileMenu) {
-        mobileMenu.addEventListener('click', function(e) {
-            // Only close if clicking the backdrop, not the content
-            if (e.target === mobileMenu) {
-                hideMenu();
-            }
-        });
-    }
     
     // Add loading animation
     document.body.style.opacity = '0';
