@@ -9,6 +9,14 @@ function initMenuElements() {
     l2 = document.querySelector(".nav-line2");
     l3 = document.querySelector(".nav-line3");
     t1 = document.querySelector(".nav-menu h1");
+    
+    // Add click event to close button
+    if (t1) {
+        t1.addEventListener('click', function(e) {
+            e.stopPropagation();
+            hideMenu();
+        });
+    }
 }
 
 function showMenu() {
@@ -203,6 +211,17 @@ document.querySelectorAll('.program-card, .company-card, .office-card, .download
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     initMenuElements();
+    
+    // Add backdrop click to close menu
+    const mobileMenu = document.querySelector('.mobile-menu');
+    if (mobileMenu) {
+        mobileMenu.addEventListener('click', function(e) {
+            // Only close if clicking the backdrop, not the content
+            if (e.target === mobileMenu) {
+                hideMenu();
+            }
+        });
+    }
     
     // Add loading animation
     document.body.style.opacity = '0';
