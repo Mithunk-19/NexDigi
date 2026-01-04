@@ -5,7 +5,6 @@
 }
 
 :root {
-    
     --primary: #C9A961;
     --primary-dark: #9B7E3F;
     --primary-light: #E4D4AA;
@@ -96,7 +95,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(237, 209, 209, 0.95);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
     box-shadow: 0 1px 0 var(--border);
     z-index: 1000;
@@ -131,11 +130,10 @@ body {
 
 .logo {
     font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    font-weight: 900;
-    color: rgb(189, 115, 3);
-    letter-spacing: 2px;
-
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-dark);
+    letter-spacing: 1px;
 }
 
 .nav-links {
@@ -190,8 +188,17 @@ body {
 
 .nav-menu h1 {
     display: none;
-    font-size: 28px;
-    color: var(--text-dark);
+    font-size: 32px;
+    color: var(--primary);
+    font-weight: 300;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.nav-menu h1:hover {
+    transform: rotate(90deg);
+    color: var(--text-light);
 }
 
 .mobile-menu {
@@ -1370,7 +1377,6 @@ body {
 
 /* Downloads Section */
 .downloads-section {
-
     background: var(--bg-white);
 }
 
@@ -1775,7 +1781,6 @@ body {
     align-items: center;
     gap: 15px;
     margin-bottom: 20px;
-    color: var(--core-color);
 }
 
 .footer-logo img {
